@@ -1,0 +1,11 @@
+  
+db:
+    name: "cinema"
+    user: "root"
+    password: "root"
+    host: 127.0.0.1
+    port: 8889
+    driver: 'pdo_mysql'
+    charset: 'utf8'
+logs:
+    folder: 'log'

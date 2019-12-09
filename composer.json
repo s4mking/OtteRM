@@ -1,8 +1,12 @@
 {
     "autoload": {
-      "psr-4": {
-          "OtteRM\\" : "src/",
-          "" : "/"
+        "psr-4": {
+            "OtteRM\\": "src/",
+            "": ""
         }
+    },
+    "require": {
+        "doctrine/annotations": "^1.8",
+        "symfony/yaml": "^5.0"
     }
-  }
+}

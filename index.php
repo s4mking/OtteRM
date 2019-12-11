@@ -10,11 +10,17 @@ require_once 'vendor/autoload.php';
 $t = new OtteRM\Annotations\Column(['tfchgchgcfhg']);
 $t = new OtteRM\Annotations\Table(['tfchgchgcfhg']);
 $t = new OtteRM\Annotations\Type(['tfchgchgcfhg']);
+// $t = new OtteRM\config\Column(['tfchgchgcfhg']);
+// $t = new OtteRM\config\Type(['tfchgchgcfhg']);
+// $t = new OtteRM\config\Table(['tfchgchgcfhg']);
 
 $myTinyManager = new EntityManager();
 $myTinyManager->createConnection();
 $myTinyManager->updateSchemaDB();
-$testsam = $myTinyManager->findOne('Film', 1);
+$film = new Film;
+$testsam = $myTinyManager->getRepository($film)->findOne(1);
+$myTinyManager->getRepository($testsam)->persist();
+
 // var_dump($testsam);
 
 

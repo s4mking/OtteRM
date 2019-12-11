@@ -2,14 +2,43 @@
 
 namespace OtteRM\config;
 
-class AnnotationParser
+/** @Annotation */
+class Column
+{
+    private $column;
+
+    public function __construct(array $values)
+    {
+        $this->column = $values['column'];
+    }
+
+    /**
+     * Get the value of column
+     */
+    public function getColumn()
+    {
+        return $this->column;
+    }
+
+    /**
+     * Set the value of column
+     *
+     * @return  self
+     */
+    public function setColumn($column)
+    {
+        $this->column = $column;
+
+        return $this;
+    }
+}
+class Table
 {
     private $name;
-    private $type;
 
-    public function __construct($annotation, $name)
+    public function __construct(array $values)
     {
-        $this->setName($name);
+        $this->name = $values['name'];
     }
 
     /**
@@ -28,7 +57,18 @@ class AnnotationParser
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
+    }
+}
+class Type
+{
+    private $type;
+
+    public function __construct(array $values)
+    {
+
+        $this->type = $values['type'];
     }
 
     /**
@@ -47,6 +87,7 @@ class AnnotationParser
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 }

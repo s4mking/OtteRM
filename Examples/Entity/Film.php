@@ -5,6 +5,9 @@ namespace Examples\Entity;
 use OtteRM\Annotations\Table;
 use OtteRM\Annotations\Column;
 use OtteRM\Annotations\Type;
+// use OtteRM\config\Column;
+// use OtteRM\config\Type;
+// use OtteRM\config\Table;
 
 
 /**

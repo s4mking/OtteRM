@@ -8,15 +8,24 @@ use Examples\Entity as Entity;
 use Doctrine\Common\Annotations\AnnotationReader;
 use ReflectionProperty;
 use Symfony\Component\Yaml\Yaml;
+use OtteRM\config\LoggedPDO;
+use OtteRM\config\LoggedPDOStatement;
+use OtteRM\config\Translator;
 
 class EntityManager
 {
 
     private $config;
     private $connection;
+    private $annotationReader;
+    private $translator;
+
 
     public function __construct()
-    { }
+    {
+        $this->annotationReader = new AnnotationReader();
+        $this->translator = new Translator;
+    }
 
 
     public function createConnection()
@@ -30,89 +39,61 @@ class EntityManager
             'port' => $params['db']['port'],
         ];
         try {
-            $connection = new \PDO('mysql:host=' . $connectionParams['host'] . ';dbname=' . $connectionParams['dbname'] . ';port=' . $connectionParams['port'], $connectionParams['user'], $connectionParams['password']);
+            $connection = new LoggedPDO('mysql:host=' . $connectionParams['host'] . ';dbname=' . $connectionParams['dbname'] . ';port=' . $connectionParams['port'], $connectionParams['user'], $connectionParams['password']);
             echo "connect success";
             $this->connection = $connection;
         } catch (\PDOException $e) {
             echo 'Connexion échouée : ' . $e->getMessage();
         }
     }
+    public function getRepository($object)
+    {
+        $className = (new \ReflectionClass($object))->getShortName();
+        $arrayName = preg_split("/\\\\/", $className);
+        $repositoryNamespace = 'src/Repository/' . $arrayName[0] . 'Repository.php';
+        if (file_exists($repositoryNamespace)) {
+            $className = str_replace('.php', '', $repositoryNamespace);
+            $className = str_replace('/', '\\', $className);
+            $className = str_replace('src', 'OtteRM', $className);
+            return (new $className($this->connection, $this->getTable($object), $this->getIdSql($object), $this->translator->getParamsObjects($object), $object));
+        }
+    }
 
 
     public function updateSchemaDB()
     {
-        $annotationReader = new AnnotationReader();
         $entityFiles = scandir('Examples/Entity');
         array_shift($entityFiles);
         array_shift($entityFiles);
         foreach ($entityFiles as $entity) {
             $entity = str_replace(".php", "", $entity);
             $reflClass = new ReflectionClass('Examples\Entity\\' . $entity);
-            $classAnnotations = $annotationReader->getClassAnnotations($reflClass);
+            $classAnnotations = $this->annotationReader->getClassAnnotations($reflClass);
             $props = $reflClass->getProperties(ReflectionProperty::IS_PRIVATE | ReflectionProperty::IS_PROTECTED | ReflectionProperty::IS_PUBLIC);
             foreach ($props as $prop) {
                 $propName = ($prop->name);
                 $property = new ReflectionProperty('Examples\Entity\\' . $entity, $propName);
-                $propType = $annotationReader->getPropertyAnnotations($property);
+                $propType = $this->annotationReader->getPropertyAnnotations($property);
             }
         }
     }
-    public function getTable($class)
+    public function getTable($object)
     {
-        $annotationReader = new AnnotationReader();
-        $reflClass = new ReflectionClass('Examples\Entity\\' . $class);
-        $classAnnotations = $annotationReader->getClassAnnotations($reflClass);
+        $reflClass = new ReflectionClass(get_class($object));
+        $classAnnotations = $this->annotationReader->getClassAnnotations($reflClass);
         return $classAnnotations[0]->getName();
     }
-    public function getParamsObjects($class)
+    public function getIdSql($object)
     {
-        $arrayResult = [];
-        $annotationReader = new AnnotationReader();
-        $reflClass = new ReflectionClass('Examples\Entity\\' . $class);
+        $reflClass = new ReflectionClass(get_class($object));
         $props = $reflClass->getProperties(ReflectionProperty::IS_PRIVATE | ReflectionProperty::IS_PROTECTED | ReflectionProperty::IS_PUBLIC);
         foreach ($props as $prop) {
             $propName = ($prop->name);
-            $property = new ReflectionProperty('Examples\Entity\\' . $class, $propName);
-            $propType = $annotationReader->getPropertyAnnotations($property);
-            $arrayResult[$propName] = $propType[0]->getColumn();
-        }
-        return $arrayResult;
-    }
-    public function SQLToObject($class, $result)
-    {
-        $nsClass = 'Examples\Entity\\' . $class;
-        $myClass = new $nsClass();
-        $properties = $this->getParamsObjects($class);
-        var_dump($properties);
-        foreach ($result as $key => $value) {
-            foreach ($properties as $keyProp => $property) {
-                if ($property === $key) {
-                    $func = "set" . ucFirst($keyProp);
-                    $myClass->$func($value);
-                }
+            if ($propName === 'id' || $propName === 'id' . get_class($object) || $propName === 'id' . ucfirst($propName)) {
+                $property = new ReflectionProperty(get_class($object), $propName);
+                $idDatabase = $this->annotationReader->getPropertyAnnotations($property);
+                return $idDatabase[0]->getColumn();
             }
         }
-        var_dump($myClass);
-    }
-
-    public function findOne($class, $id)
-    {
-        $table = $this->getTable($class);
-        $stmt = $this->connection->prepare("SELECT * FROM " . $table . " WHERE id_film = :id");
-        $stmt->execute([':id' => $id]);
-        $result = $this->SQLToObject($class, $stmt->fetch());
-        return $result;
-    }
-
-    public function findAll($class, $id = false, $orderBy = false)
-    {
-        $stmt = $this->connection->prepare("SELECT * FROM " . $class . " WHERE id_film = :id");
-        $stmt->execute([':id' => $id]);
-        return $stmt->fetch();
-    }
-
-    public function SQLManager()
-    {
-        $object = json_decode(json_encode($array), FALSE);
     }
 }

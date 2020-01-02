@@ -29,4 +29,27 @@ class Translator
         }
         return $arrayResult;
     }
+
+    public function mapperToSqlColumn($arrayFields, $object)
+    {
+        $arrayData = $this->getParamsObjects($object);
+        foreach ($arrayData as $key => $array) {
+            foreach ($arrayFields as $keyField => $field) {
+                if ($keyField == $key) {
+                    unset($arrayFields[$keyField]);
+                    $arrayFields[$array[0]] = $field;
+                }
+            }
+        }
+        return $arrayFields;
+    }
+    public function mapperSingleValueColumn($field, $object)
+    {
+        $arrayData = $this->getParamsObjects($object);
+        foreach ($arrayData as $key => $array) {
+            if ($field == $key) {
+                return $array[0];
+            }
+        }
+    }
 }

@@ -9,7 +9,6 @@ class Type
 
     public function __construct(array $values)
     {
-
         $this->type = $values['type'];
     }
 

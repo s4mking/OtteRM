@@ -10,6 +10,7 @@ use ReflectionProperty;
 use Symfony\Component\Yaml\Yaml;
 use OtteRM\config\LoggedPDO;
 use OtteRM\config\LoggedPDOStatement;
+use OtteRM\config\LogWriter;
 use OtteRM\config\Translator;
 
 class EntityManager
@@ -19,12 +20,13 @@ class EntityManager
     private $connection;
     private $annotationReader;
     private $translator;
-
+    private $logger;
 
     public function __construct()
     {
         $this->annotationReader = new AnnotationReader();
         $this->translator = new Translator;
+        $this->logger = new LogWriter;
     }
 
 
@@ -40,15 +42,18 @@ class EntityManager
         ];
         try {
             $connection = new LoggedPDO('mysql:host=' . $connectionParams['host'] . ';dbname=' . $connectionParams['dbname'] . ';port=' . $connectionParams['port'], $connectionParams['user'], $connectionParams['password']);
-            echo "connect success";
+            $connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+            $array['query'] = "connect success";
+            $array['time'] = microtime(true);
+            $this->logger->writeLog($array);
             $this->connection = $connection;
         } catch (\PDOException $e) {
-            echo 'Connexion échouée : ' . $e->getMessage();
+            $this->logger->writeLogError('Connexion échouée : ' . $e->getMessage());
         }
     }
     public function getRepository($object)
     {
-        $className = (new \ReflectionClass($object))->getShortName();
+        $className = (new ReflectionClass($object))->getShortName();
         $arrayName = preg_split("/\\\\/", $className);
         $repositoryNamespace = 'src/Repository/' . $arrayName[0] . 'Repository.php';
         if (file_exists($repositoryNamespace)) {

@@ -7,5 +7,6 @@ db:
     port: 8889
     driver: 'pdo_mysql'
     charset: 'utf8'
+    logs: 'src/Logs/'
 logs:
     folder: 'log'

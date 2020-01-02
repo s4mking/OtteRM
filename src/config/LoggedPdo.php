@@ -2,6 +2,9 @@
 
 namespace OtteRM\config;
 
+use OtteRM\config\LogWriter;
+use Symfony\Component\Yaml\Yaml;
+
 
 /**
  * Extends PDO and logs all queries that are executed and how long
@@ -9,54 +12,33 @@ namespace OtteRM\config;
  */
 class LoggedPDO extends \PDO
 {
-    public static $log = array();
-
-    public function __construct($dsn, $username = null, $password = null)
-    {
-        parent::__construct($dsn, $username, $password);
-    }
-
-    /**
-     * Print out the log when we're destructed. I'm assuming this will
-     * be at the end of the page. If not you might want to remove this
-     * destructor and manually call LoggedPDO::printLog();
-     */
-    public function __destruct()
-    {
-        self::printLog();
-    }
+    public $logger;
 
     public function query($query)
     {
+        $this->logger = new LogWriter();
         $start = microtime(true);
-        $result = parent::query($query);
-        $time = microtime(true) - $start;
-        LoggedPDO::$log[] = array(
-            'query' => $query,
-            'time' => round($time * 1000, 3)
-        );
+
+        try {
+            $result = parent::query($query);
+            $time = microtime(true) - $start;
+            $log = array(
+                'query' => $query,
+                'time' => round($time * 1000, 3)
+            );
+        } catch (\PDOException $exception) {
+            $this->logger->writeLogError($exception->getMessage());
+        }
+        $this->logger->writeLog($log);
         return $result;
-        self::printLog();
     }
 
-    // /**
-    //  * @return LoggedPDOStatement
-    //  */
-    // public function prepare($query)
-    // {
-    //     return new LoggedPDOStatement(parent::prepare($query));
-    // }
-
-    public static function printLog()
+    /**
+     * @return LoggedPDOStatement
+     */
+    public function prepare($query, $options = NULL)
     {
-        $totalTime = 0;
-        echo '<table border=1><tr><th>Query</th><th>Time (ms)</th></tr>';
-        foreach (self::$log as $entry) {
-            $totalTime += $entry['time'];
-            echo '<tr><td>' . $entry['query'] . '</td><td>' . $entry['time'] . '</td></tr>\n';
-        }
-        echo '<tr><th>' . count(self::$log) . ' queries</th><th>' . $totalTime . '</th></tr>\n';
-        echo '</table>';
+        return new LoggedPDOStatement(parent::prepare($query));
     }
 }
 
@@ -71,10 +53,12 @@ class LoggedPDOStatement
      * The PDOStatement we decorate
      */
     private $statement;
+    public $logger;
 
     public function __construct(\PDOStatement $statement)
     {
         $this->statement = $statement;
+        $this->logger = new LogWriter();
     }
 
     /**
@@ -82,15 +66,21 @@ class LoggedPDOStatement
      * then log the query
      * @return PDO result set
      */
-    public function execute()
+    public function execute(array $input_parameters = [])
     {
         $start = microtime(true);
-        $result = $this->statement->execute();
+
+        try {
+            $result = $this->statement->execute($input_parameters);
+        } catch (\PDOException $exception) {
+            $this->logger->writeLogError($exception->getMessage());
+        }
         $time = microtime(true) - $start;
-        LoggedPDO::$log[] = array(
+        $log = array(
             'query' => '[PS] ' . $this->statement->queryString,
             'time' => round($time * 1000, 3)
         );
+        $this->logger->writeLog($log);
         return $result;
     }
     /**

@@ -1,0 +1,189 @@
+
+20:01:02 09:15:34 connect success 1577952934.4448 ms
+20:01:02 09:15:34 INSERT INTO films(titre,resum,date_debut_affiche,date_fin_affiche,duree_minutes,annee_production ) VALUES('ijndehjkvjzdkjzehfkhzevfhjkzev','In part 3 of the trilogy, although stranded in the year 1955, Marty must travel to 1855 to rescue Doc Brown. Surviving Indian attacks and unfriendly townsfolk it\'s up to Marty to grab the love-struck Doc, leave the Wild West and get back to','1990-01-01','1990-02-19','119','1990') 0.198 ms
+20:01:02 09:15:59 connect success 1577952959.3077 ms
+20:01:02 09:15:59 [PS] SELECT * FROM films WHERE id_film = :id 0.398 ms
+20:01:02 09:15:59 [PS] SELECT * FROM films WHERE id_film = :id 0.239 ms
+20:01:02 09:15:59 INSERT INTO films(titre,resum,date_debut_affiche,date_fin_affiche,duree_minutes,annee_production ) VALUES('ijndehjkvjzdkjzehfkhzevfhjkzev','In part 3 of the trilogy, although stranded in the year 1955, Marty must travel to 1855 to rescue Doc Brown. Surviving Indian attacks and unfriendly townsfolk it\'s up to Marty to grab the love-struck Doc, leave the Wild West and get back to','1990-01-01','1990-02-19','119','1990') 0.177 ms
+20:01:02 09:34:20 connect success 1577954060.5898 ms
+20:01:02 09:34:20 [PS] SELECT * FROM films WHERE id_film = :id 0.432 ms
+20:01:02 09:37:14 connect success 1577954234.0196 ms
+20:01:02 09:37:14 [PS] SELECT * FROM films WHERE id_film = :id 0.492 ms
+20:01:02 09:38:38 connect success 1577954318.7726 ms
+20:01:02 09:38:38 [PS] SELECT * FROM films WHERE id_film = :id 0.366 ms
+20:01:02 09:38:53 connect success 1577954333.6138 ms
+20:01:02 09:38:53 [PS] SELECT * FROM films WHERE id_film = :id 0.406 ms
+20:01:02 09:41:12 connect success 1577954472.828 ms
+20:01:02 09:41:12 [PS] SELECT * FROM films WHERE id_film = :id 0.398 ms
+20:01:02 09:44:45 connect success 1577954685.0437 ms
+20:01:02 09:44:45 [PS] SELECT * FROM films WHERE id_film = :id 0.273 ms
+20:01:02 09:44:45 [PS] SELECT * FROM films WHERE `films`.`title` LIKE '%home%' AND `films`.`duration` LIKE '%103%' 2.975 ms
+20:01:02 09:45:35 connect success 1577954735.0464 ms
+20:01:02 09:45:55 connect success 1577954755.396 ms
+20:01:02 09:46:09 connect success 1577954769.0326 ms
+20:01:02 09:46:09 [PS] SELECT * FROM films WHERE id_film = :id 0.318 ms
+20:01:02 09:46:09 [PS] SELECT * FROM films WHERE `films`.`title` LIKE '%home%' AND `films`.`duration` LIKE '%103%' 1.345 ms
+20:01:02 09:46:47 connect success 1577954807.6743 ms
+20:01:02 09:46:47 [PS] SELECT * FROM films WHERE id_film = :id 0.26 ms
+20:01:02 09:46:47 [PS] SELECT * FROM films WHERE id_film = :id 0.167 ms
+20:01:02 09:46:47 INSERT INTO films(titre,resum,date_debut_affiche,date_fin_affiche,duree_minutes,annee_production ) VALUES('ijndehjkvjzdkjzehfkhzevfhjkzev','In part 3 of the trilogy, although stranded in the year 1955, Marty must travel to 1855 to rescue Doc Brown. Surviving Indian attacks and unfriendly townsfolk it\'s up to Marty to grab the love-struck Doc, leave the Wild West and get back to','1990-01-01','1990-02-19','119','1990') 1.246 ms
+20:01:02 09:46:56 connect success 1577954816.5083 ms
+20:01:02 09:46:56 [PS] SELECT * FROM films WHERE id_film = :id 0.299 ms
+20:01:02 09:46:56 [PS] SELECT * FROM films WHERE id_film = :id 0.203 ms
+20:01:02 09:46:56 INSERT INTO films(titre,resum,date_debut_affiche,date_fin_affiche,duree_minutes,annee_production ) VALUES('ijndehjkvjzdkjzehfkhzevfhjkzev','In part 3 of the trilogy, although stranded in the year 1955, Marty must travel to 1855 to rescue Doc Brown. Surviving Indian attacks and unfriendly townsfolk it\'s up to Marty to grab the love-struck Doc, leave the Wild West and get back to','1990-01-01','1990-02-19','119','1990') 0.175 ms
+20:01:02 09:47:09 connect success 1577954829.442 ms
+20:01:02 09:47:09 [PS] SELECT * FROM films WHERE `films`.`title` LIKE '%home%' AND `films`.`duration` LIKE '%103%' 1.394 ms
+20:01:02 09:48:20 connect success 1577954900.7603 ms
+20:01:02 09:51:58 connect success 1577955118.8028 ms
+20:01:02 09:53:57 connect success 1577955237.807 ms
+20:01:02 09:58:39 connect success 1577955519.6873 ms
+20:01:02 09:58:51 connect success 1577955531.4878 ms
+20:01:02 10:00:14 connect success 1577955614.3125 ms
+20:01:02 10:03:12 connect success 1577955792.0824 ms
+20:01:02 10:08:43 connect success 1577956123.9602 ms
+20:01:02 10:12:34 connect success 1577956354.4805 ms
+20:01:02 10:12:35 connect success 1577956355.2476 ms
+20:01:02 10:12:35 connect success 1577956355.6278 ms
+20:01:02 10:15:48 connect success 1577956548.0712 ms
+20:01:02 10:15:57 connect success 1577956557.4084 ms
+20:01:02 10:17:54 connect success 1577956674.5618 ms
+20:01:02 10:19:06 connect success 1577956746.696 ms
+20:01:02 10:19:24 connect success 1577956764.1906 ms
+20:01:02 10:19:24 connect success 1577956764.7958 ms
+20:01:02 10:19:25 connect success 1577956765.0854 ms
+20:01:02 10:19:25 connect success 1577956765.3326 ms
+20:01:02 10:19:49 connect success 1577956789.2016 ms
+20:01:02 10:20:28 connect success 1577956828.3549 ms
+20:01:02 10:20:38 connect success 1577956838.8513 ms
+20:01:02 10:21:02 connect success 1577956862.2268 ms
+20:01:02 10:22:10 connect success 1577956930.5811 ms
+20:01:02 10:22:53 connect success 1577956973.7713 ms
+20:01:02 10:23:27 connect success 1577957007.4443 ms
+20:01:02 10:23:35 connect success 1577957015.5313 ms
+20:01:02 10:24:08 connect success 1577957048.4995 ms
+20:01:02 10:24:40 connect success 1577957080.4134 ms
+20:01:02 10:24:52 connect success 1577957092.7716 ms
+20:01:02 10:25:05 connect success 1577957105.3356 ms
+20:01:02 10:25:05 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' AND films.duree_minutes LIKE '%103%' 3.075 ms
+20:01:02 10:25:16 connect success 1577957116.8096 ms
+20:01:02 10:25:50 connect success 1577957150.8684 ms
+20:01:02 10:26:45 connect success 1577957205.5147 ms
+20:01:02 10:26:52 connect success 1577957212.0234 ms
+20:01:02 10:26:52 [PS] SELECT * FROM films 5.341 ms
+20:01:02 10:28:03 connect success 1577957283.2022 ms
+20:01:02 10:28:03 [PS] SELECT * FROM films 3.202 ms
+20:01:02 10:28:04 connect success 1577957284.3413 ms
+20:01:02 10:28:04 [PS] SELECT * FROM films 3.457 ms
+20:01:02 10:28:04 connect success 1577957284.6881 ms
+20:01:02 10:28:04 [PS] SELECT * FROM films 3.138 ms
+20:01:02 10:28:04 connect success 1577957284.946 ms
+20:01:02 10:28:04 [PS] SELECT * FROM films 3.754 ms
+20:01:02 10:28:05 connect success 1577957285.2002 ms
+20:01:02 10:28:05 [PS] SELECT * FROM films 3.438 ms
+20:01:02 10:28:05 connect success 1577957285.3465 ms
+20:01:02 10:28:05 [PS] SELECT * FROM films 3.34 ms
+20:01:02 10:28:14 connect success 1577957294.1372 ms
+20:01:02 10:28:14 [PS] SELECT * FROM films WHERE id_film = :id 0.298 ms
+20:01:02 10:28:14 [PS] SELECT * FROM films WHERE id_film = :id 0.298 ms
+20:01:02 10:28:14 INSERT INTO films(titre,resum,date_debut_affiche,date_fin_affiche,duree_minutes,annee_production ) VALUES('ijndehjkvjzdkjzehfkhzevfhjkzev','In part 3 of the trilogy, although stranded in the year 1955, Marty must travel to 1855 to rescue Doc Brown. Surviving Indian attacks and unfriendly townsfolk it\'s up to Marty to grab the love-struck Doc, leave the Wild West and get back to','1990-01-01','1990-02-19','119','1990') 1.381 ms
+20:01:02 10:28:24 connect success 1577957304.048 ms
+20:01:02 10:28:24 [PS] SELECT * FROM films 3.391 ms
+20:01:02 10:28:47 connect success 1577957327.1486 ms
+20:01:02 10:29:37 connect success 1577957377.6445 ms
+20:01:02 10:29:37 [PS] SELECT * FROM films 3.571 ms
+20:01:02 10:30:06 connect success 1577957406.4488 ms
+20:01:02 10:30:38 connect success 1577957438.6703 ms
+20:01:02 10:30:38 [PS] SELECT * FROM films 3.349 ms
+20:01:02 10:30:51 connect success 1577957451.4844 ms
+20:01:02 10:30:51 [PS] SELECT * FROM films 3.574 ms
+20:01:02 10:32:03 connect success 1577957523.1336 ms
+20:01:02 10:32:03 [PS] SELECT * FROM films 3.86 ms
+20:01:02 10:32:39 connect success 1577957559.2426 ms
+20:01:02 10:32:52 connect success 1577957572.5694 ms
+20:01:02 10:32:52 [PS] SELECT * FROM films 3.755 ms
+20:01:02 10:33:48 connect success 1577957628.3642 ms
+20:01:02 10:33:48 [PS] SELECT * FROM films 3.763 ms
+20:01:02 10:34:32 connect success 1577957672.2859 ms
+20:01:02 10:34:32 [PS] SELECT * FROM films 3.306 ms
+20:01:02 10:34:32 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' AND films.duree_minutes LIKE '%103%' 1.815 ms
+20:01:02 11:18:56 connect success 1577960336.2883 ms
+20:01:02 11:20:01 connect success 1577960401.0899 ms
+20:01:02 11:21:31 connect success 1577960491.2872 ms
+20:01:02 11:21:32 connect success 1577960492.2195 ms
+20:01:02 11:21:32 connect success 1577960492.7519 ms
+20:01:02 11:22:10 connect success 1577960530.1151 ms
+20:01:02 11:22:10 connect success 1577960530.8725 ms
+20:01:02 11:22:11 connect success 1577960531.1792 ms
+20:01:02 11:22:18 connect success 1577960538.2218 ms
+20:01:02 11:22:18 connect success 1577960538.8384 ms
+20:01:02 11:22:25 connect success 1577960545.8141 ms
+20:01:02 11:22:42 connect success 1577960562.7499 ms
+20:01:02 11:23:21 connect success 1577960601.2111 ms
+20:01:02 11:23:44 connect success 1577960624.8179 ms
+20:01:02 11:24:01 connect success 1577960641.0603 ms
+20:01:02 11:25:00 connect success 1577960700.0073 ms
+20:01:02 11:25:17 connect success 1577960717.8296 ms
+20:01:02 11:26:36 connect success 1577960796.9723 ms
+20:01:02 11:26:37 connect success 1577960797.8989 ms
+20:01:02 11:26:38 connect success 1577960798.3821 ms
+20:01:02 11:26:38 connect success 1577960798.6492 ms
+20:01:02 11:26:38 connect success 1577960798.8763 ms
+20:01:02 11:26:39 connect success 1577960799.0945 ms
+20:01:02 11:26:39 connect success 1577960799.2824 ms
+20:01:02 11:27:06 connect success 1577960826.0886 ms
+20:01:02 11:27:18 connect success 1577960838.7226 ms
+20:01:02 11:27:19 connect success 1577960839.4583 ms
+20:01:02 11:27:19 connect success 1577960839.8604 ms
+20:01:02 11:27:48 connect success 1577960868.2378 ms
+20:01:02 11:28:06 connect success 1577960886.7399 ms
+20:01:02 11:28:06 [PS] SELECT * FROM films WHERE id_film = :id 1.725 ms
+20:01:02 11:28:06 [PS] UPDATE films SET(Array) WHERE = :id  2.648 ms
+20:01:02 11:28:07 connect success 1577960887.4969 ms
+20:01:02 11:28:07 [PS] SELECT * FROM films WHERE id_film = :id 0.294 ms
+20:01:02 11:28:07 [PS] UPDATE films SET(Array) WHERE = :id  1.436 ms
+20:01:02 11:32:05 connect success 1577961125.5806 ms
+20:01:02 11:32:05 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' 1.899 ms
+20:01:02 11:37:29 connect success 1577961449.6318 ms
+20:01:02 11:38:04 connect success 1577961484.7909 ms
+20:01:02 11:38:31 connect success 1577961511.2237 ms
+20:01:02 04:45:40 connect success 1577979940.604 ms
+20:01:02 05:23:39 connect success 1577982219.3988 ms
+20:01:02 05:23:39 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY  1.947 ms
+20:01:02 05:24:23 connect success 1577982263.1816 ms
+20:01:02 05:24:23 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY duration 1.491 ms
+20:01:02 05:25:11 connect success 1577982311.7556 ms
+20:01:02 05:25:11 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY films.duration 1.656 ms
+20:01:02 05:25:12 connect success 1577982312.9444 ms
+20:01:02 05:25:12 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY films.duration 1.544 ms
+20:01:02 05:25:53 connect success 1577982353.6633 ms
+20:01:02 05:25:53 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY duree_minutes 2.102 ms
+20:01:02 05:29:15 connect success 1577982555.9299 ms
+20:01:02 05:29:15 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY  1.323 ms
+20:01:02 05:29:45 connect success 1577982585.3827 ms
+20:01:02 05:29:45 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY  1.829 ms
+20:01:02 05:29:54 connect success 1577982594.1291 ms
+20:01:02 05:29:54 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY duration 1.624 ms
+20:01:02 05:29:55 connect success 1577982595.6007 ms
+20:01:02 05:29:55 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY duration 1.823 ms
+20:01:02 05:29:55 connect success 1577982595.9411 ms
+20:01:02 05:29:55 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY duration 1.289 ms
+20:01:02 05:30:18 connect success 1577982618.3072 ms
+20:01:02 05:30:18 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY duration 1.556 ms
+20:01:02 05:30:54 connect success 1577982654.3262 ms
+20:01:02 05:30:54 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY duration 1.248 ms
+20:01:02 05:31:07 connect success 1577982667.7043 ms
+20:01:02 05:31:07 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY duration 1.768 ms
+20:01:02 05:31:43 connect success 1577982703.7849 ms
+20:01:02 05:31:43 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY duree_minutes 1.763 ms
+20:01:02 05:34:29 connect success 1577982869.3421 ms
+20:01:02 05:34:29 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY duree_minutes , duree_minutes 1.682 ms
+20:01:02 05:35:03 connect success 1577982903.9869 ms
+20:01:02 05:35:04 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY duree_minutes , duree_minutes 1.895 ms
+20:01:02 05:35:24 connect success 1577982924.5425 ms
+20:01:02 05:35:24 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY duree_minutes , duree_minutes 1.757 ms
+20:01:02 05:37:03 connect success 1577983023.7988 ms
+20:01:02 05:37:30 connect success 1577983050.0233 ms
+20:01:02 05:37:30 connect success 1577983050.9342 ms
+20:01:02 05:37:37 connect success 1577983057.2222 ms
+20:01:02 05:37:48 connect success 1577983068.1969 ms
+20:01:02 05:37:48 [PS] SELECT * FROM films WHERE films.titre LIKE '%home%' ORDER BY duree_minutes , titre 1.85 ms

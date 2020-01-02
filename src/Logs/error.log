@@ -1,0 +1,21 @@
+
+No records found
+20:01:02 09:44:45 SQLSTATE[42S22]: Column not found: 1054 Unknown column 'films.title' in 'where clause'
+20:01:02 09:46:09 SQLSTATE[42S22]: Column not found: 1054 Unknown column 'films.title' in 'where clause'
+20:01:02 09:47:09 SQLSTATE[42S22]: Column not found: 1054 Unknown column 'films.title' in 'where clause'
+20:01:02 11:28:06 No records found
+20:01:02 11:28:06 SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(Array) WHERE = 'id'' at line 1
+20:01:02 11:28:07 No records found
+20:01:02 11:28:07 SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(Array) WHERE = 'id'' at line 1
+20:01:02 05:23:39 SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+20:01:02 05:24:23 SQLSTATE[42S22]: Column not found: 1054 Unknown column 'duration' in 'order clause'
+20:01:02 05:25:11 SQLSTATE[42S22]: Column not found: 1054 Unknown column 'films.duration' in 'order clause'
+20:01:02 05:25:12 SQLSTATE[42S22]: Column not found: 1054 Unknown column 'films.duration' in 'order clause'
+20:01:02 05:29:15 SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+20:01:02 05:29:45 SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+20:01:02 05:29:54 SQLSTATE[42S22]: Column not found: 1054 Unknown column 'duration' in 'order clause'
+20:01:02 05:29:55 SQLSTATE[42S22]: Column not found: 1054 Unknown column 'duration' in 'order clause'
+20:01:02 05:29:55 SQLSTATE[42S22]: Column not found: 1054 Unknown column 'duration' in 'order clause'
+20:01:02 05:30:18 SQLSTATE[42S22]: Column not found: 1054 Unknown column 'duration' in 'order clause'
+20:01:02 05:30:54 SQLSTATE[42S22]: Column not found: 1054 Unknown column 'duration' in 'order clause'
+20:01:02 05:31:07 SQLSTATE[42S22]: Column not found: 1054 Unknown column 'duration' in 'order clause'

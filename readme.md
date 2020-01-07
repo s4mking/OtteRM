@@ -13,14 +13,14 @@ You'll need to create yourconfig.yml file, and within it,
 
  >  
  >db:
-    >>name: "dbname"
-    >>user: "user"
-    >>password: "yourpassword"
-    >>host: 127.0.0.1 or anything else
-    >>port: 8889 or anything else
-    >>driver: 'pdo_mysql'
-    >>charset: 'utf8'
-    >>logs: 'src/Logs/' or any other folder inside your project
+>>name: "dbname"
+>>user: "user"
+>>password: "yourpassword"
+>>host: 127.0.0.1 or anything else
+>>port: 8889 or anything else
+>>driver: 'pdo_mysql'
+>>charset: 'utf8'
+>>logs: 'src/Logs/' or any other folder inside your project
 >
 
 This file should be put in the config folder. 

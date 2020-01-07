@@ -10,7 +10,6 @@ and to run the command
 
 You'll need to create yourconfig.yml file, and within it,
  put the following line :   
-
 >  
 >db:
 >> name: "dbname"
@@ -21,6 +20,7 @@ You'll need to create yourconfig.yml file, and within it,
 >> driver: 'pdo_mysql'
 >> charset: 'utf8'
 >> logs: 'src/Logs/' or any other folder inside your project
+>
 >
 
 This file should be put in the config folder. 

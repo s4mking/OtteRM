@@ -32,15 +32,19 @@ Otterm works like Doctrine it uses entities inside the Examples/Entity folders t
 We use the annotations to define the relation SQL/Object.
 All your entites must have this fields :
 1. At which table this entity refer
+```php
      /**
     * Class Film
      * @Table(name="films")
     */
+```
 2. Relation column to field and which type
+```php
     /**
      * @Column(column="id_film")
      * @Type(type="int")
      */
+```
 
 To know how to use it inside your projects go to see inside the DataExample folder.
 

@@ -11,7 +11,7 @@ and to run the command
 You'll need to create yourconfig.yml file, and within it,
  put the following line :   
 
- >  
+>  
 >db:
 >> name: "dbname"
 >> user: "user"
